@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "349863550428",
+    "firebase_url": "https://redapp-9da2a.firebaseio.com",
+    "project_id": "redapp-9da2a",
+    "storage_bucket": "redapp-9da2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349863550428:android:1566bef68985d2f97b0319",
+        "android_client_info": {
+          "package_name": "com.assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349863550428-prkl50m8qmkhgqf5i36n0cqqmgk6ub6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.assignment",
+            "certificate_hash": "24f144e4a6ddbc74bf0e7409d96852f92ce15c3a"
+          }
+        },
+        {
+          "client_id": "349863550428-64deka7hlrhv3lagvicr71bpedrrjhc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5OAoXQ7g2ZQspcwlJiIWjhkZNFBoUCPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349863550428-64deka7hlrhv3lagvicr71bpedrrjhc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

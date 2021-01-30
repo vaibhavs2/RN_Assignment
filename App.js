@@ -16,8 +16,8 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Colors,} from 'react-native/Libraries/NewAppScreen';
-import AddSection from "./screens/formScreen";
-import FindSeries from "./screens/findSeries";
+import Chats from "./screens/chatList";
+import Conversation from "./screens/conversation";
 
 
 
@@ -30,7 +30,7 @@ function HomeScreen({ navigation }) {
     <View style={styles.body}>
     <StatusBar barStyle="default" />
     <Button
-      onPress={() => navigation.navigate('Section')}
+      onPress={() => navigation.navigate('Chats')}
       title="Add sections"
       color="#841584"
       accessibilityLabel="Navigate to Add sections "
@@ -55,9 +55,9 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Section" component={AddSection}  options={{ title: 'Add section' }} />
-      <Stack.Screen name="Series" component={FindSeries}  options={{ title: 'Find series' }}/>
+    <Stack.Screen name="Chats" component={Chats}  options={{ title: 'Chats' }} />
+    <Stack.Screen name="Conversation" component={Conversation}  options={{ title: "chat" }}/>
+    <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   </NavigationContainer>
   );
