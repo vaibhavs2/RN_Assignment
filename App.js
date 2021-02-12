@@ -6,66 +6,77 @@
  * @flow strict-local
  */
 
-import React, {useMemo,useState}  from 'react';
+import React from 'react';
+import {
+   View,
+  StyleSheet,
+  Button,
+  StatusBar,
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ProductList from "./src/screens/productList";
-import ProductDetail from "./src/screens/productDetail";
-import CartItem from './src/screens/cartItem';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {CartContext} from './src/component/cartContext'
+import {Colors,} from 'react-native/Libraries/NewAppScreen';
+import Chats from "./screens/chatList";
+import Conversation from "./screens/conversation";
 
 
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+function HomeScreen({ navigation }) {
 
-
-function HomeTabs() {
+  onPressLearnMore=()=>{
+    console.log("clicking");
+  }
   return (
-    <Tab.Navigator tabBarOptions={{
-      labelStyle:{
-        fontSize:18,
-        marginBottom:12
-      }
-  }}>
-      <Tab.Screen name="Product" component={ProductList}  options={{ tabBarLabel: "Products" }} />
-      <Tab.Screen name="Cart" component={CartItem}  options={{ tabBarLabel: "Cart"}} />
-    </Tab.Navigator>
-    
+    <View style={styles.body}>
+    <StatusBar barStyle="default" />
+    <Button
+      onPress={() => navigation.navigate('Chats')}
+      title="Add sections"
+      color="#841584"
+      accessibilityLabel="Navigate to Add sections "
+    />
+    <View style={{marginVertical:6}}></View>
+
+      <Button
+        onPress={() => navigation.navigate('Series')}
+        title="Find number"
+        color="#841584"
+        accessibilityLabel="Navigate to Find number from series"
+        />
+      </View>
   );
 }
 
 
+const Stack = createStackNavigator();
+
 const App: () => React$Node = () => {
 
-  const [getCartItem, setCartItem] = useState([])
-
-
-  const contexValue = useMemo(
-    () => ({
-      addToCart: async (itemList) => {
-        setCartItem(itemList)
-      },
-      cartItem:getCartItem
-    }),
-    []
-  );
-
-
-
   return (
-<CartContext.Provider value={contexValue}>
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Product" component={HomeTabs}  options={{ title: 'Products' }} />
-        <Stack.Screen name="Detail" component={ProductDetail}  options={{ title: "Detail" }} />
-      </Stack.Navigator>
-    </NavigationContainer>
-</CartContext.Provider>
+    <Stack.Navigator>
+    <Stack.Screen name="Chats" component={Chats}  options={{ title: 'Chats' }} />
+    <Stack.Screen name="Conversation" component={Conversation}  options={{ title: "chat" }}/>
+    <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 };
 
 
+
+const styles = StyleSheet.create({
+   
+  body: {
+    backgroundColor: Colors.white,
+    flex:1,
+    justifyContent:'center',
+    padding:8
+  },
+  buttons_:{
+    margin:5
+  }
+  
+});
 
 export default App;
