@@ -43,6 +43,12 @@ function HomeScreen({ navigation }) {
         color="#841584"
         accessibilityLabel="Navigate to Find number from series"
         />
+        <Text>practicing</Text>
+          <Text>git practicing</Text>
+          <Text>git practicing</Text>
+
+          <Text>git practicing</Text>
+          <Text>practicing</Text>
       </View>
   );
 }
